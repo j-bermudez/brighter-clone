@@ -1,0 +1,25 @@
+@font-face {
+	font-family: 'Telegraf';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/Telegraf-Regular.eot');
+	src: local('Telegraf Regular'), local('Telegraf-Regular'),
+		url('../fonts/Telegraf-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Telegraf-Regular.woff2') format('woff2'),
+		url('../fonts/Telegraf-Regular.woff') format('woff'),
+		url('../fonts/Telegraf-Regular.ttf') format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Telegraf';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../fonts/Telegraf-Medium.eot');
+	src: local('Telegraf Medium'), local('Telegraf-Medium'),
+		url('../fonts/Telegraf-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Telegraf-Medium.woff2') format('woff2'),
+		url('../fonts/Telegraf-Medium.woff') format('woff'),
+		url('../fonts/Telegraf-Medium.ttf') format('truetype');
+	font-display: swap;
+}

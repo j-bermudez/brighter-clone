@@ -1,0 +1,54 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	color: $color__text-main;
+	border: 2px solid $color__text-main;
+	text-transform: uppercase;
+	padding: 1em 1.75em;
+	background-color: transparent;
+	border-radius: 0;
+	line-height: (22 / 18);
+
+	&:hover {
+		color: $color__border-button-hover;
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		color: $color__border-button-hover;
+		border-color: $color__border-button-focus;
+	}
+}
+
+.wp-block-button {
+	color: $color__text-main;
+}
+
+.wp-block-button__link {
+	color: $color__text-main;
+	border: 2px solid $color__text-main;
+	text-transform: uppercase;
+	padding: 1em 1.75em;
+	background-color: transparent;
+	border-radius: 0;
+	line-height: (22 / 18);
+	transition: all 0.3s ease-in-out;
+	min-width: 200px;
+
+	&:hover {
+		color: $color__link-hover;
+		border-color: $color__green;
+		background-color: $color__green;
+	}
+	&:visited{
+		color: #23285A;
+		border-color:#23285A;
+		
+	}
+	&:focus{
+		color: #23285A;
+		border-color:#23285A;
+	}
+}

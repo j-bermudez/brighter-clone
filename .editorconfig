@@ -1,0 +1,9 @@
+# http://editorconfig.org/
+
+# top-most EditorConfig file
+root = true
+
+# tab indentation
+[*.{js,sass,scss,html,php,css}]
+indent_style = tab
+indent_size = 4

@@ -1,0 +1,164 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: $color__text-input;
+	border: 0 none;
+	border-bottom: 2px solid $color__border-input;
+	border-radius: 0;
+	padding: 5px 0;
+	background: none;
+
+	&:focus {
+		color: $color__text-input-focus;
+	}
+
+	&::placeholder {
+		color: $color__blue-dark;
+		// Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+		opacity: 1;
+	}
+}
+
+select {
+	border: 1px solid $color__border-input;
+}
+
+textarea {
+	width: 100%;
+	border-bottom: 2px solid $color__border-input;
+}
+
+// WPForms
+.wpforms-container {
+	position: relative;
+	margin: 2em 0 0;
+	@include clearfix();
+
+	.wpforms-field-textarea {
+		float: left;
+		width: 100%;
+	}
+
+	.wpforms-one-half,
+	.wpforms-field {
+		position: relative;
+	}
+
+	.wpforms-field {
+		overflow: visible !important;
+	}
+
+	.wpforms-field-hp,
+	.wpforms-submit-container {
+		clear: both;
+		@include clearfix();
+	}
+
+	.wpforms-submit-container {
+		width: 100%;
+		text-align: center;
+		padding-top: 60px;
+		margin-bottom: 10px;
+
+		.wpforms-submit {
+			border-radius: 0;
+			background-color: transparent;
+
+			&:hover {
+				background-color: $color__green;
+				border-color: $color__green;
+			}
+		}
+	}
+
+	textarea.wpforms-field-large {
+		height: 200px;
+	}
+
+	.wpforms-field input.wpforms-error,
+	.wpforms-field input.user-invalid,
+	.wpforms-field textarea.wpforms-error,
+	.wpforms-field textarea.user-invalid,
+	.wpforms-field select.wpforms-error,
+	.wpforms-field select.user-invalid {
+		border: 0 none;
+		border-bottom: 2px solid $color__pink;
+	}
+
+	label.wpforms-error {
+		color: $color__pink;
+		position: absolute;
+		right: 0;
+		font-size: 0.75em;
+	}
+
+	.wpforms-confirmation-container {
+		min-height: 200px;
+	}
+
+	$width_left: 35%;
+	@include media-breakpoint-up(lg) {
+
+		.wpforms-field,
+		.wpforms-one-half {
+			padding: 20px 0;
+		}
+
+		.wpforms-field-row {
+			width: $width_left;
+			margin: -20px 0 !important;
+
+			.wpforms-one-half {
+				width: 100%;
+				float: none;
+				margin: 0;
+			}
+		}
+
+		.wpforms-field[data-field-id="1"],
+		.wpforms-field[data-field-id="3"],
+		.wpforms-field[data-field-id="6"] {
+			width: $width_left;
+			float: left;
+			margin-left: 0;
+			clear: left;
+		}
+
+		.wpforms-field[data-field-id="2"],
+		.wpforms-field[data-field-id="7"] {
+			width: calc(50% - 16px);
+			float: right;
+			margin-left: 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.wpforms-field[data-field-id="2"] {
+			top: 76px;
+
+			textarea.wpforms-field-large {
+				height: 264px;
+			}
+		}
+
+		.wpforms-submit-container {
+			width: calc(50% - 16px);
+			float: right;
+			text-align: left;
+		}
+	}
+}

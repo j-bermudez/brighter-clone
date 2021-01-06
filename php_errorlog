@@ -1,0 +1,16 @@
+[08-Aug-2020 10:52:42 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php on line 15
+[02-Nov-2020 15:26:06 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php on line 15
+[02-Nov-2020 15:27:06 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php on line 15
+[03-Nov-2020 19:33:35 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/brighter/public_html/wp-content/themes/brighter-ai/index.php on line 15
