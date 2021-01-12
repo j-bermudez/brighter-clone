@@ -569,7 +569,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
   xdata.open("GET", xmlBase, true); //only send request on company page load 
 
-  if (window.location.pathname.includes('company')) {
+  if (window.location.pathname.includes('company') || window.location.pathname.includes('unternehmen')) {
     xdata.send();
   } //build a post for every xml post
 
