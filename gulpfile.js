@@ -9,6 +9,8 @@ const concat 		= require('gulp-concat');
 const uglify 		= require('gulp-uglify');
 const autoprefixer 	= require('autoprefixer');
 const cssnano 		= require('cssnano');
+const babel         = require('gulp-babel');
+const plumber       = require("gulp-plumber")
 const sourcemaps 	= require('gulp-sourcemaps');
 const browserSync 	= require('browser-sync').create();
 
@@ -74,7 +76,22 @@ exports.styleBackend = styleBackend;
 function js() {
 	return (
 		gulp
+			
 			.src(paths.scripts.src)
+			.pipe(plumber())
+				// Transpile the JS code using Babel's preset-env.
+				.pipe(
+					babel({
+					presets: [
+						[
+						"@babel/env",
+						{
+							modules: false
+						}
+						]
+					]
+					})
+				)
 			.pipe(jshint())
 			.pipe(jshint.reporter('default'))
 			.pipe(concat('scripts.js'))

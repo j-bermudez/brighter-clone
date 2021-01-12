@@ -1,0 +1,53 @@
+    #positions{
+    width:100%;
+    min-height:10px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    }
+    #positions a{
+      color:#23285A;
+    
+    }
+    .j-bai-position{
+        width:600px;
+        height:200px;
+        background-color:#7D87FF;
+        padding:20px;
+        margin-bottom: 20px;
+        cursor:pointer;
+      
+    }
+    
+    
+    .j-bai-name{
+    font-size:40px;
+    
+    }
+    
+    .j-bai-dep{
+    }
+    .j-bai-descTitle{
+      display: none; 
+    }
+    .j-bai-descVal{
+      display: none;}
+    
+      @media only screen 
+      and (max-width: 600px) {
+        #positions{
+          flex-direction: column;
+          
+        }
+        .j-bai-name{
+    
+            font-size: 30px;
+        }
+        .j-bai-position{
+            width:100%;
+            margin-bottom: 10px;
+            height:200px;
+            min-height:200px;
+        }
+      }

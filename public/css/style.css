@@ -869,16 +869,10 @@ textarea {
   input[type="color"]:focus,
   textarea:focus {
     color: #23285a; }
-  input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="range"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder, input[type="week"]::-webkit-input-placeholder, input[type="time"]::-webkit-input-placeholder, input[type="datetime"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder, input[type="color"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: #23285a;
-    opacity: 1; }
   input[type="text"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="search"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="range"]::-moz-placeholder, input[type="date"]::-moz-placeholder, input[type="month"]::-moz-placeholder, input[type="week"]::-moz-placeholder, input[type="time"]::-moz-placeholder, input[type="datetime"]::-moz-placeholder, input[type="datetime-local"]::-moz-placeholder, input[type="color"]::-moz-placeholder, textarea::-moz-placeholder {
     color: #23285a;
     opacity: 1; }
   input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="range"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input[type="time"]:-ms-input-placeholder, input[type="datetime"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder, input[type="color"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    color: #23285a;
-    opacity: 1; }
-  input[type="text"]::-ms-input-placeholder, input[type="email"]::-ms-input-placeholder, input[type="url"]::-ms-input-placeholder, input[type="password"]::-ms-input-placeholder, input[type="search"]::-ms-input-placeholder, input[type="number"]::-ms-input-placeholder, input[type="tel"]::-ms-input-placeholder, input[type="range"]::-ms-input-placeholder, input[type="date"]::-ms-input-placeholder, input[type="month"]::-ms-input-placeholder, input[type="week"]::-ms-input-placeholder, input[type="time"]::-ms-input-placeholder, input[type="datetime"]::-ms-input-placeholder, input[type="datetime-local"]::-ms-input-placeholder, input[type="color"]::-ms-input-placeholder, textarea::-ms-input-placeholder {
     color: #23285a;
     opacity: 1; }
   input[type="text"]::placeholder,
@@ -3582,3 +3576,40 @@ object {
 /*--------------------------------------------------------------
 # Personio 
 --------------------------------------------------------------*/
+#positions {
+  width: 100%;
+  min-height: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+#positions a {
+  color: #23285A; }
+
+.j-bai-position {
+  width: 600px;
+  height: 200px;
+  background-color: #7D87FF;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer; }
+
+.j-bai-name {
+  font-size: 40px; }
+
+.j-bai-descTitle {
+  display: none; }
+
+.j-bai-descVal {
+  display: none; }
+
+@media only screen and (max-width: 600px) {
+  #positions {
+    flex-direction: column; }
+  .j-bai-name {
+    font-size: 30px; }
+  .j-bai-position {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 200px;
+    min-height: 200px; } }
