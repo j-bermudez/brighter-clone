@@ -4,8 +4,7 @@
  * This shows the job positions from personio
  */
 ( function() {
-
-      //link to request open positions 
+//link to request open positions 
 const xmlBase = "https://brighter-ai-jobs.personio.de/xml?language=en"; 
 //base for career page; just add job id after for direct link
 const jobBase = "https://brighter-ai-jobs.personio.de/job/";
@@ -55,7 +54,7 @@ xdata.onreadystatechange = function() {
 //add get request 
 xdata.open("GET", xmlBase, true); 
 //only send request on company page load 
-if(window.location.pathname.includes('company')){
+if(window.location.pathname.includes('company') || window.location.pathname.includes('unternehmen')){
   xdata.send();
 }
 //build a post for every xml post
