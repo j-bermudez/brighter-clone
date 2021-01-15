@@ -446,7 +446,7 @@ function filter_projects() {
   
 	if($ajaxposts->have_posts()) {
 	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-		$response .= "It works baby :)))";
+		$response .=   get_template_part('inc/section-preview-no-loop');
 	  endwhile;
 	} else {
 	  $response = 'empty';
