@@ -11,7 +11,7 @@
 
 
 <section class="center-content   j-bai-container-previews-resources">
-   <div class=" center-content j-bai-previews-resources">
+   <div class=" project-tiles center-content j-bai-previews-resources">
        <?php get_template_part('inc/section', 'preview')?>
    </div>
        
@@ -29,12 +29,15 @@ $parent_terms = get_terms( $taxonomyName, array( 'parent' => 0, 'orderby' => 'sl
 <?php $terms = get_terms( $taxonomyName, array( 'parent' => $pterm->term_id, 'orderby' => 'slug', 'hide_empty' => false ) );?>
   <?php foreach($terms as $term) : ?>
     <li>
-      <a class="cat-list_item" href="#!" data-slug="<?=  $pterm->slug; ?>">
+      <a class="cat-list_item" href="#!" data-slug="<?=  $term->slug; ?>">
         <?=  $term->name; ?>
       </a>
     </li>
     <?php endforeach; ?>
   <?php endforeach; ?>
+
+
+
 <!-- End test  -->
 
 
