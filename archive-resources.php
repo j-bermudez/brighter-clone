@@ -18,6 +18,26 @@
    
 
 </section> 
+<!-- Test  -->
+
+<?php 
+//Get the list of categories from the taxonomy Resources Type
+$taxonomyName = "resources-types";
+//This gets top layer terms only.  This is done by setting parent to 0.  
+$parent_terms = get_terms( $taxonomyName, array( 'parent' => 0, 'orderby' => 'slug', 'hide_empty' => false ) );   
+echo '<ul>';
+foreach ( $parent_terms as $pterm ) {
+    //Get the Child terms
+    $terms = get_terms( $taxonomyName, array( 'parent' => $pterm->term_id, 'orderby' => 'slug', 'hide_empty' => false ) );
+    foreach ( $terms as $term ) {
+        echo '<li><a href="' . get_term_link( $term ) . '">' . $term->name . '</a></li>';   
+    }
+}
+echo '</ul>';
+
+
+?>
+<!-- End test  -->
 
 
 
