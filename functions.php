@@ -436,9 +436,9 @@ function filter_projects() {
 	$catSlug = $_POST['category'];
   
 	$ajaxposts = new WP_Query([
-	  'post_type' => 'resources-types',
+	  'post_type' => 'resources',
 	  'posts_per_page' => -1,
-	  'category_name' => $catSlug,
+	  'slug' => $catSlug,
 	  'orderby' => 'menu_order', 
 	  'order' => 'desc',
 	]);
