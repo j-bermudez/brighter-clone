@@ -1,10 +1,12 @@
 <?php 
 
+    $currentPage = (get_query_var('paged')) ? get_query_var('paged') :1;
     $resourcesAllPosts = new WP_Query(
         array(
             'post_type' => 'resources',
             'posts_per_page' => 4,
-            'post_per_page' => '-1'
+            'paged'=> $currentPage,
+           
         )
         
     );
@@ -67,11 +69,11 @@ endwhile;?>
 
        <?php next_posts_link()?>
 
-
-
-
 </div>
 
 
-<?php endif;?>
+<?php
+ endif;
+ ?>
+
 

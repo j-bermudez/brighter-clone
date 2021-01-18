@@ -26,6 +26,8 @@
 //Print the different classes from the taxonomy "Resources Type"
  $taxonomyName = "resources-types";
  $terms = get_terms( $taxonomyName, array( 'parent' => 0, 'orderby' => 'slug', 'hide_empty' => false ) ); ?>
+ <ul>
+ <li><a class="cat-list_item active" href="#!" data-slug="">All projects</a></li>
  <?php foreach($terms as $term) : ?>
 
     <li>
@@ -37,7 +39,7 @@
     
    
   <?php endforeach; ?>
-
+  </ul>
 <section>
 
 </section>

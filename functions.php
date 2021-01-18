@@ -474,8 +474,9 @@ function filter_projects() {
 		wp_reset_postdata();
 	  endwhile;
 	} else {
-	  $response = 'empty';
-	  wp_reset_postdata();
+		wp_reset_postdata();
+	  $response = get_template_part('inc/section', 'preview');
+	
 	}
   
 	echo $response;
