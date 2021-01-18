@@ -1,14 +1,24 @@
-<?php $i = 1;if ( have_posts()):while (have_posts()):the_post();?>
+<?php 
+
+    $resourcesAllPosts = new WP_Query(
+        array(
+            'post_type' => 'resources',
+            'posts_per_page' => 4,
+            'post_per_page' => '-1'
+        )
+        
+    );
+
+
+
+if ( $resourcesAllPosts->have_posts()):
+    while ($resourcesAllPosts->have_posts()):
+        $resourcesAllPosts->the_post();?>
  
                     
 
  <div class="bg-light previewBox">
-        <!-- 
-        <div class="j-bai-resource-type">
-            <?php /*the_field('resource_type');*/?>
-        </div>
-        -->
-
+       
         <a target = "_blank" href="<?php the_permalink()?>"><div class="j-bai-img-preview-box">
             <img src="<?php the_post_thumbnail_url();?>" class="" alt="">
         </div>
@@ -35,9 +45,9 @@
                     class= "j-bai-text-decoration-none" 
                     href=" <?php the_permalink()?>">
                     
-                        <div class="j-bai-button button-l">
+                        <!-- <div class="j-bai-button button-l">
                                 READ MORE
-                       </div>
+                       </div> -->
                 </a>
                     
                 </div>
@@ -45,5 +55,23 @@
                 
             </div>
 </div>
-<?php $i++; endwhile; else: endif;?>
+<?php 
+wp_reset_postdata();
+endwhile;?>
+
+<div class="center-content j-bai-separador ">
+       
+       <?php previous_posts_link()?>
+       
+     
+
+       <?php next_posts_link()?>
+
+
+
+
+</div>
+
+
+<?php endif;?>
 

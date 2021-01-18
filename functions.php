@@ -415,18 +415,27 @@ function bai_resources_section_post_type(){
 add_action('init', 'bai_resources_section_post_type');
 
 function bai_resources_taxonomy(){
-	$args = array(
-		'labels' => array(
-			'name' => 'Resources Type', 
-			'singular_name'=> 'Resource Type'
-		),
-		'public' => true,
-		'hierarchical' => true, 
-
-
-
+	$labels = array(
+		'name' => 'Resource Type', 
+		'singular_name'=> 'Resource Type', 
+		'search_items' => 'Search Resource Type', 
+		'all_items' => 'Parent Resource Type', 
+		'parent_item_colon' => 'Parent Resource Type', 
+		'edit_item' => 'Edit Resource Type', 
+		'update_item' => 'Update Resource Type', 
+		'add_new_item' => 'Add New Resource Type Name', 
+		'menu_name' => 'Resource Type'
 
 	);
+	$args = array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui'=>true, 
+		'public' => true,
+		'query_var' => true, 
+		'rewrite' => 'resources', 
+	);
+
 	register_taxonomy('resources-types', array('resources'),$args);
 }
 add_action('init', 'bai_resources_taxonomy');
@@ -437,19 +446,36 @@ function filter_projects() {
   
 	$ajaxposts = new WP_Query([
 	  'post_type' => 'resources',
-	  'posts_per_page' => -1,
-	  'slug' => $catSlug,
+	  'posts_per_page' =>-1,
 	  'orderby' => 'menu_order', 
 	  'order' => 'desc',
+	  'relation' => 'AND',
+	  'tax_query' => array(
+		array(
+			'taxonomy' => 'resources-types',
+			'field'    => 'slug',
+			'terms'    => $catSlug,
+		),
+	),
+	
+	//   'tax_query' => array( 
+    //     // array( 
+    //     //     'slug' => $catSlug, //or tag or custom taxonomy
+    //     //     'field' => 'id', 
+    //     //     'terms' => array('9') 
+    //     // ) 
+    // ) 
 	]);
 	$response = '';
   
 	if($ajaxposts->have_posts()) {
 	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-		$response .=   get_template_part('inc/section-preview-no-loop');
+		$response .=  get_template_part('inc/section-preview-no-loop');
+		wp_reset_postdata();
 	  endwhile;
 	} else {
 	  $response = 'empty';
+	  wp_reset_postdata();
 	}
   
 	echo $response;
